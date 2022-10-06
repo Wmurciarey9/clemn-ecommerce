@@ -11,6 +11,10 @@ const cors = require("cors");
 
 dotenv.config();
 
+var distDir = __dirname + "/dist/";
+
+app.use(express.static(distDir));
+
 mongoose
   .connect(process.env.MONGO_URL)
   .then(() => console.log("DB Connection Successfull"))
