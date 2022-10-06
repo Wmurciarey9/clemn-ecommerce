@@ -30,7 +30,7 @@ app.use("/api/orders", orderRoute);
 app.use(express.static(path.join(__dirname, "/client/build")));
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "/client/build", "index.html"));
+  res.sendFile(path.join(__dirname, "/client/build", "App.jsx"));
 });
 
 let port = process.env.PORT;

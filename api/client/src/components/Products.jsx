@@ -1,10 +1,7 @@
-
-
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { axiosInstance } from "../config";
 
-import { popularProducts } from "../data";
 import Product from "./Product";
 
 const Container = styled.div`
