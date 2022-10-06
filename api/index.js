@@ -11,10 +11,6 @@ const cors = require("cors");
 
 dotenv.config();
 
-var distDir = __dirname + "/dist/";
-
-app.use(express.static(distDir));
-
 mongoose
   .connect(process.env.MONGO_URL)
   .then(() => console.log("DB Connection Successfull"))
@@ -37,6 +33,8 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "/client/build", "index.html"));
 });
 
-app.listen(process.env.PORT, () => {
+let port = process.env.PORT;
+
+app.listen(port, () => {
   console.log("Backend server is running");
 });
