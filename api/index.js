@@ -27,14 +27,14 @@ app.use("/api/products", productRoute);
 app.use("/api/carts", cartRoute);
 app.use("/api/orders", orderRoute);
 
-app.use(express.static(path.join(__dirname, "/client/build")));
+// app.use(express.static(path.join(__dirname, "/client/build")));
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "/client/build", "App.jsx"));
-});
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "/client/build", "App.jsx"));
+// });
 
-let port = process.env.PORT;
+// let port = process.env.PORT;
 
-app.listen(port, () => {
+app.listen(process.env.PORT || 5000, () => {
   console.log("Backend server is running");
 });
